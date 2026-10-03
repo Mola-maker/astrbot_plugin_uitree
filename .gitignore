@@ -3,3 +3,5 @@ __pycache__/
 *.pyo
 data/
 .astrbot/
+.astrbot-test/
+PR.md

@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "display_name": "UI Tree",
+    "desc": "Extracts Claude Code's ui.render visualization mod into a standalone UI element-tree renderer, rendering agent-generated interface trees in the AstrBot plugin page and chat."
+  },
+  "pages": {
+    "uitree": {
+      "title": "UI Tree"
+    }
+  }
+}

@@ -4,6 +4,9 @@
 [AstrBot](https://github.com/Soulter/AstrBot) 上。Agent 不再只能输出纯文本 —— 它可以动态生成
 表单、状态面板、文件树等界面结构，并在插件页里以三种视图实时渲染：
 
+> UI 遵循 AstrBot 前端（Vuetify / Material Design）风格，作为 **WebUI 的新标签页**打开，
+> 跟随仪表盘明暗主题自动切换。
+
 - **元素树（tree）** —— 左侧可折叠的节点层级，点任意节点看 `props` / `state`；
 - **实时预览（preview）** —— 按元素类型渲染出的真实界面；
 - **JSON** —— 直接编辑整棵树并「应用」。
@@ -83,7 +86,7 @@ data/plugins/astrbot_plugin_uitree/
 
 ## 测试与截图
 
-本机未安装 AstrBot，因此分两层验证：
+在 AstrBot `4.28.2`（Python 3.12）实例上完成真实测试：
 
 1. **模型层（零依赖）**：
    ```bash
@@ -92,7 +95,16 @@ data/plugins/astrbot_plugin_uitree/
    输出 `validated: true` / `roundtrip_ok: true` / `rejected_invalid: 3` 的摘要 —— 校验三套预设、
    JSON 往返一致，并拒绝 3 类非法结构。
 
-2. **渲染层**：用 Edge headless 对 `demo/index.html` 抓取 DOM 并截图，确认 13 种元素类型徽标
-   全部正确渲染。截图见 `screenshots/`（`session.png` / `filetree.png` / `form.png`）。
+2. **端到端（真实 AstrBot）**：
+   - 插件正常加载，注册 2 个 LLM 工具与 Web API；
+   - `GET/POST /astrbot_plugin_uitree/tree` 经 `window.AstrBotPluginPage` bridge 全链路往返成功
+     （13 种元素类型徽标、3 个预设、实时数据均正确渲染）；
+   - 插件页作为 WebUI 新标签页打开，跟随仪表盘明暗主题（`html[data-theme]` 由仪表盘注入）。
 
-完整端到端测试（插件页 + `AstrBotPluginPage` bridge + 持久化）需在安装了 AstrBot 的实例上进行。
+   截图见 `screenshots/`：
+
+   | 文件 | 内容 |
+   |------|------|
+   | `dashboard-tab.png` | 插件页作为 WebUI 标签页的全貌 |
+   | `plugin-page-light.png` / `plugin-page-dark.png` | 明 / 暗主题下的插件页 |
+   | `session.png` / `filetree.png` / `form.png` | 三套预设的渲染效果 |

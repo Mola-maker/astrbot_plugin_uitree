@@ -6,10 +6,10 @@
   'use strict';
 
   var TYPE_COLORS = {
-    Pane: '#8b7cf6', Box: '#5bb8f6', Row: '#5bb8f6', Column: '#5bb8f6',
-    Text: '#9aa5b8', Button: '#3ddc97', Badge: '#f6b73c', Progress: '#5bb8f6',
-    Stat: '#3ddc97', Tabs: '#8b7cf6', List: '#5bb8f6', ListItem: '#9aa5b8',
-    Divider: '#5d6a80', Spacer: '#5d6a80'
+    Pane: '#1867C0', Box: '#2196F3', Row: '#2196F3', Column: '#2196F3',
+    Text: '#9e9e9e', Button: '#4CAF50', Badge: '#FB8C00', Progress: '#2196F3',
+    Stat: '#48A9A6', Tabs: '#1867C0', List: '#2196F3', ListItem: '#9e9e9e',
+    Divider: '#90a4ae', Spacer: '#90a4ae'
   };
 
   var PRESETS = {
