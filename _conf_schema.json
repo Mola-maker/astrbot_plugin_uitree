@@ -1,0 +1,12 @@
+{
+  "auto_seed_demo": {
+    "description": "首次加载时写入内置演示界面树（Claude Code mod 风格预设）",
+    "type": "bool",
+    "default": true
+  },
+  "persist_tree": {
+    "description": "把当前界面树持久化到插件数据目录，重启后保留",
+    "type": "bool",
+    "default": true
+  }
+}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Tree 可视化</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="uitree">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">◇</div>
+        <div><h1>UI Tree 可视化</h1><small>ui.render mod · extracted</small></div>
+      </div>
+      <div class="grow"></div>
+      <select id="preset-select" title="内置预设"></select>
+      <span class="chip"><b>●</b> live</span>
+    </header>
+
+    <div class="split">
+      <section class="col">
+        <div class="pane-head"><span class="dot"></span> 元素树</div>
+        <div class="pane-body" id="inspector"></div>
+      </section>
+
+      <section class="col">
+        <div class="pane-head">
+          <span class="dot"></span> 实时预览
+          <div class="grow"></div>
+          <div class="seg">
+            <button id="view-preview" class="active" type="button">预览</button>
+            <button id="view-json" type="button">JSON</button>
+          </div>
+        </div>
+        <div class="pane-body" id="preview"></div>
+        <div class="pane-body" id="json-pane" hidden>
+          <textarea id="json-editor" class="json-editor" spellcheck="false"></textarea>
+          <div class="apply-row">
+            <span class="grow"></span>
+            <button id="apply-json" type="button">应用 JSON</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="detail" id="detail">点击左侧节点查看 props / state</footer>
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="./renderer.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

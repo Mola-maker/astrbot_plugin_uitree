@@ -1,0 +1,7 @@
+name: astrbot_plugin_uitree
+display_name: UI Tree 可视化
+desc: 把 Claude Code 的 ui.render 可视化 mod 抽离成独立的 UI 元素树渲染器，在 AstrBot 插件页与聊天中以「树视图 / 实时预览 / JSON」三种方式渲染 Agent 生成的界面树。
+short_desc: 生成式 UI 元素树渲染器：树视图 + 实时预览 + JSON 编辑。
+author: Molafans
+version: 0.1.0
+astrbot_version: ">=4.26.0,<5"

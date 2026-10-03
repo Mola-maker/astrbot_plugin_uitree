@@ -1,0 +1,2 @@
+# 无第三方依赖：插件只使用 Python 标准库 + AstrBot 提供的 API。
+# AstrBot 4.26+ / Python 3.10+ 即可运行。
